@@ -21,9 +21,9 @@ Database instruction:
 log in to mysql database using super user:
 run these commands
 
-GRANT ALL PRIVILEGES ON cert.* TO 'cert_owner'@'127.0.0.1' IDENTIFIED BY 'seattle2006$$' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON cert.* TO '*******' IDENTIFIED BY '******' WITH GRANT OPTION;
 
-create database cert;
+create database *****;
 
 FLUSH privileges;
 
@@ -37,4 +37,4 @@ cd vao directory where the database file is stored.
 
 type following command
 
-mysql -u cert_owner -p cert < ./cert_test_2015-05-23.sql
+mysql -u ****** -p ***** < ./*******.sql
