@@ -1,0 +1,11 @@
+/.idea/
+/build/
+*.iml
+
+/target
+/classes
+*.jar
+*.class
+*~
+*/web-app/WEB-INF/classes
+target

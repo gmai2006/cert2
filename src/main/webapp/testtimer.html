@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <title>goog.Timer Test</title>
+  <script src="js/closure/goog/base.js"></script>
+</head>
+<body>
+
+<h1>goog.Timer Test</h1>
+
+<div id="mainContent"></div>
+
+<script>
+  goog.require('goog.Timer');
+</script>
+<script>
+  var tickCount = 0;
+  var timer = new goog.Timer(1);
+  var mainDiv = document.querySelector('#mainContent');
+
+  /**
+   * Tick callback.
+   */
+  var tickCounter = function() {
+    tickCount++;
+    if (tickCount % 1000 === 0) {
+      var timeElapsed = goog.now() - startTime;
+      mainDiv.innerHTML = 'goog.Timer tick events: ' + tickCount +
+          '<br>actual elapsed milliseconds: ' + timeElapsed +
+          '<br>milliseconds per goog.Timer tick: ' + timeElapsed/tickCount;
+    }
+  };
+
+  startTime = goog.now();
+  timer.start();
+  goog.events.listen(timer, goog.Timer.TICK, tickCounter);
+</script>
+</body>
+</html>

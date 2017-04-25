@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<!-- A JPA Persistence Unit -->
+	<persistence-unit name="examJPA" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<!-- JPA entities must be registered here -->
+		<class>com.tomcat.hosting.dao.AdminLog</class>
+		<class>com.tomcat.hosting.dao.Answer</class>
+		<class>com.tomcat.hosting.dao.AnswerPK</class>
+		<class>com.tomcat.hosting.dao.Certification</class>
+		<class>com.tomcat.hosting.dao.Exam</class>
+		<class>com.tomcat.hosting.dao.ExamView</class>
+		<class>com.tomcat.hosting.dao.ExamCreation</class>
+		<class>com.tomcat.hosting.dao.ExamCreationPK</class>
+		<class>com.tomcat.hosting.dao.ExamHistory</class>
+		<class>com.tomcat.hosting.dao.ExamHistoryRecord</class>
+		<class>com.tomcat.hosting.dao.ExamHistoryRecordPK</class>
+		<class>com.tomcat.hosting.dao.Exhibit</class>
+		<class>com.tomcat.hosting.dao.ExhibitPK</class>
+		<class>com.tomcat.hosting.dao.Explanation</class>
+		<class>com.tomcat.hosting.dao.ExplanationPK</class>
+		<class>com.tomcat.hosting.dao.Objective</class>
+		<class>com.tomcat.hosting.dao.ObjectivePK</class>
+		<class>com.tomcat.hosting.dao.Page</class>
+		<class>com.tomcat.hosting.dao.Question</class>
+		<class>com.tomcat.hosting.dao.QuestionPK</class>
+		<class>com.tomcat.hosting.dao.Rss</class>
+		<class>com.tomcat.hosting.dao.RssItem</class>
+		<class>com.tomcat.hosting.dao.Statistic</class>
+		<class>com.tomcat.hosting.dao.User</class>
+		<class>com.tomcat.hosting.dao.UserSession</class>
+		<class>com.tomcat.hosting.dao.UserSessionHistory</class>
+		<class>com.tomcat.hosting.dao.Vendor</class>
+		<class>com.tomcat.hosting.dao.Visitor</class>
+		<properties>
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"></property>
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/cert"></property>
+			<property name="hibernate.connection.username" value="cert_owner"></property>
+			<property name="hibernate.connection.password" value="seattle2006$$"></property>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"></property>
+			<!-- Default is false for backwards compatibility. Should be used on all 
+				new projects -->
+			
+			<!-- C3P0 connection pool -->
+			<property name="hibernate.c3p0.timeout" value="600"></property>
+			<property name="hibernate.c3p0.maxIdleTimeExcessConnections"
+				value="20"></property>
+
+			<!-- Connection testing settings -->
+			<property name="hibernate.c3p0.validate" value="true"></property>
+			<property name="hibernate.c3p0.idle_test_period" value="30"></property>
+			<property name="hibernate.c3p0.automaticTestTable" value="USERS"></property>
+
+			<!-- Enable Hibernate's automatic session context management -->
+			<property name="current_session_context_class" value="thread"></property>
+			
+			<property name="hibernate.id.new_generator_mappings" value="true"></property>
+		</properties>
+	</persistence-unit>
+
+</persistence>
